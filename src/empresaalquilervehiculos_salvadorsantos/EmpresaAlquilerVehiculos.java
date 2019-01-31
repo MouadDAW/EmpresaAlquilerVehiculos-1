@@ -32,7 +32,19 @@ public class EmpresaAlquilerVehiculos {
     vehiculoAlquilado*/
     private int totalAlquileres;
     private VehiculoAlquilado[] alquileres;
-    
-    
-    
+
+    public EmpresaAlquilerVehiculos(String cif, String nombre, String paginaWeb) {
+        this.cif = cif;
+        this.nombre = nombre;
+        this.paginaWeb = paginaWeb;
+        this.totalCliente = 0;
+        
+        //no hay clientes creados
+        this.clientes = new Cliente[50]; //apunta a null
+        this.totalVehiculos = 0;
+        this.vehiculos = new Vehiculo[50]; //apunta a null
+        this.totalAlquileres = 0;
+        this.alquileres = new VehiculoAlquilado[100]; //apunta a null
+    }
+        
 }
