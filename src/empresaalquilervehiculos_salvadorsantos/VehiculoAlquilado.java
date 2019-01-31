@@ -18,4 +18,5 @@ public class VehiculoAlquilado {
     private int añoAlquiler;
     private int totalDiasAlquiler;
     
+    
 }
