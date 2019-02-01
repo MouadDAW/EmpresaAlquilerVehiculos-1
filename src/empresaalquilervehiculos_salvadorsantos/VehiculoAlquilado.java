@@ -5,6 +5,9 @@
  */
 package empresaalquilervehiculos_salvadorsantos;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 /**
  *
  * @author salva
@@ -13,13 +16,24 @@ public class VehiculoAlquilado {
         
     private Cliente cliente;
     private Vehiculo vehiculo;
-    private int diaAlquiler;
-    private int mesAlquiler;
-    private int añoAlquiler;
+    LocalDate fechaAlquilado;
+//    private int diaAlquiler;
+//    private int mesAlquiler;
+//    private int añoAlquiler;
     private int totalDiasAlquiler;
 
-    public VehiculoAlquilado() {
+    public VehiculoAlquilado(Cliente cliente, Vehiculo vehiculo, LocalDate fechaAlquilado, int totalDiasAlquiler) {
+        this.cliente = cliente;
+        this.vehiculo = vehiculo;
+        this.fechaAlquilado = fechaAlquilado;
+        this.totalDiasAlquiler = totalDiasAlquiler;
     }
+
+
+
+
+    
+    
 
     public Cliente getCliente() {
         return cliente;
@@ -37,29 +51,7 @@ public class VehiculoAlquilado {
         this.vehiculo = vehiculo;
     }
 
-    public int getDiaAlquiler() {
-        return diaAlquiler;
-    }
 
-    public void setDiaAlquiler(int diaAlquiler) {
-        this.diaAlquiler = diaAlquiler;
-    }
-
-    public int getMesAlquiler() {
-        return mesAlquiler;
-    }
-
-    public void setMesAlquiler(int mesAlquiler) {
-        this.mesAlquiler = mesAlquiler;
-    }
-
-    public int getAñoAlquiler() {
-        return añoAlquiler;
-    }
-
-    public void setAñoAlquiler(int añoAlquiler) {
-        this.añoAlquiler = añoAlquiler;
-    }
 
     public int getTotalDiasAlquiler() {
         return totalDiasAlquiler;
@@ -71,8 +63,14 @@ public class VehiculoAlquilado {
 
     @Override
     public String toString() {
-        return "VehiculoAlquilado{" + "cliente=" + cliente + ", vehiculo=" + vehiculo + ", diaAlquiler=" + diaAlquiler + ", mesAlquiler=" + mesAlquiler + ", a\u00f1oAlquiler=" + añoAlquiler + ", totalDiasAlquiler=" + totalDiasAlquiler + '}';
+        return "VehiculoAlquilado{" + "cliente=" + cliente + ", vehiculo=" + vehiculo + ", totalDiasAlquiler=" + totalDiasAlquiler + '}';
     }
+
+
+
+   
+
+    
     
     
 }
