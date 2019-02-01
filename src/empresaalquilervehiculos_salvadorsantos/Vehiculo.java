@@ -18,8 +18,16 @@ public class Vehiculo {
     private double tarifa;
     private boolean disponible;
 
-    public Vehiculo() {
+    public Vehiculo(String matricula, String marca, String modelo, String color, double tarifa, boolean disponible) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.tarifa = tarifa;
+        this.disponible = disponible;
     }
+
+
 
     public String getMatricula() {
         return matricula;
@@ -61,7 +69,7 @@ public class Vehiculo {
         this.tarifa = tarifa;
     }
 
-    public boolean isDisponible() {
+    public boolean getDisponible() {
         return disponible;
     }
 
@@ -71,7 +79,7 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo{" + "matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", color=" + color + ", tarifa=" + tarifa + ", disponible=" + disponible + '}';
+        return matricula + "\t" + marca +" "+ modelo + "\t" + color + "\t" + tarifa + "\t" + disponible ;
     }
     
     
