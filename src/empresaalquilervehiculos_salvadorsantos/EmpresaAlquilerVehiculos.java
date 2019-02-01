@@ -147,7 +147,7 @@ public class EmpresaAlquilerVehiculos {
 //método recorre el array clientes y va mostrando los datos de cada
 //cliente.
     public void imprimirClientes() {
-        System.out.println("NIF cliente\tNombre\n");
+        System.out.println("NIF cliente\tNombre");
         for (int i = 0; i < this.totalClientes; i++) {
             System.out.println(clientes[i].toString());
         }
@@ -158,7 +158,7 @@ public class EmpresaAlquilerVehiculos {
 //uno .
     
     public void imprimirVehiculos() {
-        System.out.println("Matricula\tModelo\tColor\tImporte\tDisponible\n");
+        System.out.println("Matricula\tModelo\t\tColor\tImporte\tDisponible\n");
         for (int i = 0; i < this.totalVehiculos; i++) {
             System.out.println(vehiculos[i].toString());
         }
