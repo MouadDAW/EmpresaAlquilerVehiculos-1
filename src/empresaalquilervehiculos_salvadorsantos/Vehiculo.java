@@ -5,6 +5,8 @@
  */
 package empresaalquilervehiculos_salvadorsantos;
 
+import java.util.Random;
+
 /**
  *
  * @author salva
@@ -13,21 +15,61 @@ public class Vehiculo {
     
     private String matricula;
     private String marca;
-    private String modelo;
+    
     private String color;
-    private double tarifa;
+    private int tarifa;
     private boolean disponible;
 
-    public Vehiculo(String matricula, String marca, String modelo, String color, double tarifa, boolean disponible) {
+    public Vehiculo(String matricula, String marca, String color, int tarifa, boolean disponible) {
         this.matricula = matricula;
         this.marca = marca;
-        this.modelo = modelo;
+        
         this.color = color;
         this.tarifa = tarifa;
         this.disponible = disponible;
     }
 
+    public static Vehiculo cocheAleatorio() {
+        Random aleatorio = new Random();
 
+        String[] marcas = {"Seat Ibiza", "Ford Fiesta", "Fiat Punto", "Opel Corsa", "Seat Altea", "Kia Ceed", "Kia Picanto", "Ford Focus"};
+        String[] abecedario = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        String[] colores = {"Rojo", "Azul", "Verde", "Amarillo", "verde"};
+        int[] tarifas={25, 35,40, 22};
+
+        int m1 = aleatorio.nextInt(9);
+        int m2 = aleatorio.nextInt(9);
+        int m3 = aleatorio.nextInt(9);
+        int m4 = aleatorio.nextInt(9);
+
+        String Matricula = m1 + "" + m2 + "" + m3 + "" + m4;
+
+//            int letra1= aleatorio.nextInt(abecedario.length);
+//            int letra2= aleatorio.nextInt(abecedario.length);
+//            int letra3= aleatorio.nextInt(abecedario.length);
+        String letras = abecedario[aleatorio.nextInt(abecedario.length)] + "" + abecedario[aleatorio.nextInt(abecedario.length)] + "" + abecedario[aleatorio.nextInt(abecedario.length)];
+
+        String matricula = Matricula + " " + letras;
+
+        int marcAlea = aleatorio.nextInt(marcas.length);
+        int colorAlea = aleatorio.nextInt(colores.length);
+        int tarifaAlea=aleatorio.nextInt(tarifas.length);
+
+//        System.out.println("Matricula: "+matricula+"\tMarca: "+marca[marcAlea]+"\tColor: "+color[colorAlea]);
+        //String coche = "Matricula: " + matricula + "\tMarca: " + marca[marcAlea] + "\tColor: " + color[colorAlea];
+        
+        //String matricula, String marca, String color, double tarifa, boolean disponible
+        
+        
+        String marca=marcas[marcAlea];
+        String color=colores[colorAlea];
+        int tarifa=tarifas[tarifaAlea];
+        
+        Vehiculo cocheAlea = new Vehiculo(matricula, marca, color, tarifa, true);
+
+        return cocheAlea;
+
+    }
 
     public String getMatricula() {
         return matricula;
@@ -45,13 +87,7 @@ public class Vehiculo {
         this.marca = marca;
     }
 
-    public String getModelo() {
-        return modelo;
-    }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
 
     public String getColor() {
         return color;
@@ -65,7 +101,7 @@ public class Vehiculo {
         return tarifa;
     }
 
-    public void setTarifa(double tarifa) {
+    public void setTarifa(int tarifa) {
         this.tarifa = tarifa;
     }
 
@@ -79,7 +115,7 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return matricula + "\t" + marca +" "+ modelo + "\t" + color + "\t" + tarifa + "\t" + disponible ;
+        return matricula + "\t" + marca +" "+ "\t" + color + "\t" + tarifa + "\t" + disponible ;
     }
     
     
