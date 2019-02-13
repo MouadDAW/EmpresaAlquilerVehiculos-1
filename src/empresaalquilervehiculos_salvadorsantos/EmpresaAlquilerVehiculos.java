@@ -6,6 +6,7 @@
 package empresaalquilervehiculos_salvadorsantos;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 /**
  *
@@ -49,6 +50,30 @@ public class EmpresaAlquilerVehiculos {
         this.alquileres = new VehiculoAlquilado[100]; //apunta a null
         
     }
+    
+    public void rellenarArrayCoches() {
+        
+        for (int i = 0; i < vehiculos.length; i++) {
+            
+            vehiculos[i]=Vehiculo.cocheAleatorio();
+            
+        }
+        totalVehiculos=50;
+        
+    }
+    
+    public void rellenarArrayClientes() {
+        
+        for (int i = 0; i < clientes.length; i++) {
+            
+            clientes[i]=Cliente.clienteAleatorio();
+        }
+        
+        totalClientes=50;
+        
+    }
+    
+
 
     public String getCif() {
         return cif;
