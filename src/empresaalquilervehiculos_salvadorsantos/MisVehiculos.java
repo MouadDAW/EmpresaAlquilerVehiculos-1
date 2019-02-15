@@ -1,5 +1,7 @@
 package empresaalquilervehiculos_salvadorsantos;
 
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +16,7 @@ public class MisVehiculos {
     
     public static void main(String[] args) {
         EmpresaAlquilerVehiculos easydrive = new EmpresaAlquilerVehiculos("A-28-187189", "easy drive", "www.easydrive.com");
+        Scanner entrada=new Scanner(System.in);
 //        
 //        //Registro los clientes de la empresa
 //        easydrive.registrarCliente(new Cliente("X5618927C", "Juan", "González López"));
@@ -45,12 +48,29 @@ public class MisVehiculos {
 //        System.out.println("Aleatorios "+Vehiculo.cocheAleatorio());
         
         easydrive.rellenarArrayCoches();
+
+        easydrive.burbujaVehiculos();
+
         easydrive.imprimirVehiculos();
         
+        //---------------------------------------------------
+
         easydrive.rellenarArrayClientes();
+
+        easydrive.burbujaClientes();
+
         easydrive.imprimirClientes();
 
+        //------------------------------------------------------------
+        System.out.println("Introduce matricula");
+        String matricula=entrada.nextLine();
+        
+        easydrive.busquedaBinariaMatricula(matricula);
 
-
+            if (easydrive.busquedaBinariaMatricula(matricula)==-1) {
+                System.out.println("No se ha encontrado");
+        }else{
+                System.out.println("La matricula buscada esta en la posicion : "+easydrive.busquedaBinariaMatricula(matricula));
+            }
     }
 }
