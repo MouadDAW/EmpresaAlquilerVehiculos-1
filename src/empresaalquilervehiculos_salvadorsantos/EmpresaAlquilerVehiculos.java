@@ -120,6 +120,35 @@ public class EmpresaAlquilerVehiculos {
         }
         return -1;
     }
+    
+     public int busquedaBinariaNif(String nif){
+                
+        int mitad=0; int izquierda = 0; int derecha = clientes.length - 1;
+        int valor=0;
+        int buscado = 10; 
+        
+        while ((izquierda<=derecha)){
+            
+            mitad = (izquierda + derecha) / 2;
+            
+            valor=this.clientes[mitad].getNif().compareTo(nif);
+            
+            if ( valor==0){
+                
+                return mitad;
+                
+            } 
+
+            else if (valor<0){ 
+                    izquierda = mitad + 1; //buscar en el trozo izquierdo
+
+            }
+            else{
+                    derecha = mitad -1; // buscar en el trozo derecho
+            }
+        }
+        return -1;
+    }
 
     public void rellenarArrayCoches() {
 
