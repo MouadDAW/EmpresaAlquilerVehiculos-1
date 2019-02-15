@@ -62,15 +62,30 @@ public class MisVehiculos {
         easydrive.imprimirClientes();
 
         //------------------------------------------------------------
-        System.out.println("Introduce matricula");
-        String matricula=entrada.nextLine();
+//        System.out.println("Introduce matricula");
+//        String matricula=entrada.nextLine();
+//        
+//        easydrive.busquedaBinariaMatricula(matricula);
+//
+//            if (easydrive.busquedaBinariaMatricula(matricula)==-1) {
+//                System.out.println("No se ha encontrado");
+//        }else{
+//                System.out.println("La matricula buscada esta en la posicion : "+easydrive.busquedaBinariaMatricula(matricula));
+//            }
+            
+        //-------------------------------------------------------------------------
+        //DNI
+            
+        System.out.println("Introduce DNI");
         
-        easydrive.busquedaBinariaMatricula(matricula);
+        String nif=entrada.nextLine();
+        
+        easydrive.busquedaBinariaNif(nif);
 
-            if (easydrive.busquedaBinariaMatricula(matricula)==-1) {
+            if (easydrive.busquedaBinariaNif(nif)==-1) {
                 System.out.println("No se ha encontrado");
         }else{
-                System.out.println("La matricula buscada esta en la posicion : "+easydrive.busquedaBinariaMatricula(matricula));
-            }
+                System.out.println("El DNI buscado esta en la posicion : "+easydrive.busquedaBinariaNif(nif));
+            }    
     }
 }
