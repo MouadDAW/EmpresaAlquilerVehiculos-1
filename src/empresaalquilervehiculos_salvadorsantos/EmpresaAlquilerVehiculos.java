@@ -51,12 +51,52 @@ public class EmpresaAlquilerVehiculos {
         
     }
     
+    //burbuja ordenar clientes por nif
+    public void burbujaClientes() {
+        Cliente auxi;
+
+        for (int i = 0; i < clientes.length - 1; i++) {
+            for (int j = i + 1; j < clientes.length; j++) {
+
+                int aux = clientes[i].getNif().compareTo(clientes[j].getNif());
+                if (aux > 0) {
+                    auxi = clientes[i];
+                    clientes[i] = clientes[j];
+                    clientes[j] = auxi;
+                }
+            }
+        }
+    }
+ /*Comparacion de cadenas (diccionario). Metodo compareTo()
+        Devuelve 0 si las cadenas son iguales, 
+        un positivo si s1 esta antes del diccionario (menor) 
+        o un positivo si s1 esta despues de s2 (mayor)*/
+        //burbuja ordenar vehiculos por matricula
+
+    public void burbujaVehiculos() {
+        Vehiculo auxi;
+                
+        for (int i = 0; i < vehiculos.length-1; i++){
+            for (int j = i+1; j < vehiculos.length; j++) {
+                
+             int aux=vehiculos[i].getMatricula().compareTo(vehiculos[j].getMatricula());
+                        if (aux>0) {
+                    auxi= vehiculos[i];
+                    vehiculos[i]=vehiculos[j];
+                    vehiculos[j]=auxi;
+                }
+            }
+        }
+    }
+    
+
+
     public void rellenarArrayCoches() {
-        
+
         for (int i = 0; i < vehiculos.length; i++) {
-            
-            vehiculos[i]=Vehiculo.cocheAleatorio();
-            
+
+            vehiculos[i] = Vehiculo.cocheAleatorio();
+
         }
         totalVehiculos=50;
         
@@ -72,6 +112,7 @@ public class EmpresaAlquilerVehiculos {
         totalClientes=50;
         
     }
+    
     
 
 
